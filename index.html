@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
         <title>Wes Beard</title>
     </head>
     <body>
@@ -13,72 +14,48 @@
         </div>
         <div id="top-row">
             <div class="top-row-item" onclick="location.href = 'https:\/\/www.github.com/wesbeard'" onmouseover="hoverText('Github')" onmouseout="defaultText()">
-                <img src="./Resources/github_shadow.png">
+                <img src="./assets/github_shadow.png">
             </div>
         </div>
         <div id="bottom-row">
             <div class="bottom-row-item" onclick="location.href = 'https:\/\/www.instagram.com/wesb1665'" onmouseover="hoverText('Instagram')" onmouseout="defaultText()">
-                <img src="./Resources/instagram_shadow.png">
+                <img src="./assets/instagram_shadow.png">
             </div>
             <div class="bottom-row-item" onclick="location.href = 'https:\/\/www.linkedin.com/in/wesleybeard'" onmouseover="hoverText('LinkedIn')" onmouseout="defaultText()">
-                <img src="./Resources/linkedin_shadow.png">
+                <img src="./assets/linkedin_shadow.png">
             </div>
             <div class="bottom-row-item" onclick="location.href = 'https:\/\/drive.google.com/file/d/1I-CP0xoIfIYt-nA8ZdeD4l-eDEVLKiAj/view?usp=sharing'" onmouseover="hoverText('Resume')" onmouseout="defaultText()">
-                <img src="./Resources/cv_shadow.png">
+                <img src="./assets/cv_shadow.png">
             </div>
             <div class="bottom-row-item" onclick="location.href = 'https:\/\/open.spotify.com/user/0t3pxf697kb53ll49zfcuv16w'" onmouseover="hoverText('Spotify')" onmouseout="defaultText()">
-                <img src="./Resources/spotify_shadow.png">
+                <img src="./assets/spotify_shadow.png">
             </div>
         </div>
         <div id="color-button">
-            <img src="./Resources/color-wheel.png" onclick="randBackground()">
+            <img src="./assets/color-wheel.png" onclick="randBackground()">
         </div>
     </body>
 </html>
 
 <script>
-    window.onload = randBackground;
+    let colors = ['#393840', '#d18400', '#5f20ab', '#ff9054', '#2fad53', '#25888a'];
+    let previousIndex = 1;
+    let randomIndex = 1;
 
     function randBackground()
     {
-        var colorRand = Math.ceil(Math.random() * 6);
-        console.log(colorRand);
-
-
-        switch (colorRand)
-        {
-            case 1:
-                document.getElementById('html').style.background = '#393840';
-                break;
-            case 2:
-                document.getElementById('html').style.background = '#d18400';
-                break;
-            case 3:
-                document.getElementById('html').style.background = '#5f20ab';
-                break;
-            case 4:
-                document.getElementById('html').style.background = '#ff9054';
-                break;
-            case 5:
-                document.getElementById('html').style.background = '#2fad53';
-                break;
-            case 6:
-                document.getElementById('html').style.background = '#25888a';
-                break;
-            default:
-                document.getElementById('html').style.background = '#393840';
-                break;
-                
+        previousIndex = randomIndex;
+        while (randomIndex === previousIndex) {
+            randomIndex = Math.ceil(Math.random() * colors.length);
         }
+        document.getElementById('html').style.background = colors[randomIndex - 1];
     }
 
-    function hoverText(title) 
-    {
+    function hoverText(title) {
         document.getElementById('main-text').innerHTML = title;
     }
 
-    function defaultText() 
-    {
+    function defaultText() {
         document.getElementById('main-text').innerHTML = "Wes Beard";
     }
 </script>
