@@ -1,162 +1,121 @@
 html {
-    background: #393840;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
-    overflow: hidden;
+  background: #393840;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#main-text {
-    display: flex;
-    flex: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100vw;
-    height: 30vh;
-    font-size: 15vh;
-    text-shadow: 10px 10px black;
+#title-row {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  align-items: center;
+  flex: 2;
 }
 
-#top-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 30vh;
+#top-icons {
+  display: flex;
+  align-items: center;
+  flex: 2;
 }
 
-.top-row-item {
-    width: 30vh;
-    height: 30vh;
+#bottom-icons {
+  display: flex;
+  flex: 3;
+  flex-wrap: wrap;
+  width: 60vw;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: center;
+  justify-content: space-around;
+  padding-bottom: 50px;
 }
 
-.top-row-item img {
-    width: 30vh;
-    height: 30vh;
+img {
+  margin: 20px;
+  fill: #fff;
+  filter: drop-shadow(10px 10px rgb(0 0 0));
+  transition: 0.2s ease-in-out;
 }
 
-.top-row-item:hover {
-    border-radius: 5%;
-    transform: translateY(-8px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
-    cursor: pointer;
+img:hover {
+  filter: drop-shadow(20px 20px rgb(0 0 0));
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
-#bottom-row {
-    width: 100vw;
-    height: 20vh;
-    margin-top: 5vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+.large-icon {
+  width: 200px;
+  height: auto;
 }
 
-.bottom-row-item {
-    display: flex;
-    justify-content: center;
-    width: 15vh;
-    height: 15vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
+.small-icon {
+  width: 120px;
+  height: auto;
 }
 
-.bottom-row-item img {
-    width: 15vh;
-    height: 15vh;
-}
-
-.bottom-row-item:hover {
-    border-radius: 5%;
-    transform: translateY(-8px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
-    cursor: pointer;
+p {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 100pt;
+  text-shadow: 10px 10px black;
+  transition: 0.2s ease-in-out;
 }
 
 #color-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 7px 7px black;
-    width: 7vh;
-    height: 7vh;
-    background: white;
-    border-radius: 100%;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px black;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  transition: 0.1s ease-in-out;
 }
 
 #color-button:active {
-    box-shadow: 0px 0px black;
-    transform: translate(4px, 4px);
+  box-shadow: none;
+  transform: translate(5px, 5px);
+  transition: 0.1s ease-in-out;
 }
 
 #color-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #color-button img {
-    width: 4vh;
-    height: 4vh;
+  filter: none;
+  width: 40px;
+  height: auto;
 }
 
-@media (max-width: 450px) {
-    #main-text {
-        height: 45vw;
-        font-size: 18vw;
-        text-shadow: 5px 5px black;
-    }
+@media (max-width: 600px) {
+  p {
+    font-size: 60pt;
+  }
 
-    #top-row {
-        height: 45vw;
-        margin-bottom: 5vw;
-    }
+  img {
+    margin: 5px;
+  }
 
-    .top-row-item {
-        width: 45vw;
-        height: 45vw;
-    }
+  .large-icon {
+    width: 140px;
+  }
 
-    .top-row-item img {
-        width: 45vw;
-        height: 45vw;
-    }
-
-    #bottom-row {
-        margin-top: 0vh;
-        height: 50vw;
-    }
-
-    .bottom-row-item {
-        display: flex;
-        justify-content: center;
-        width: 25vw;
-        height: 25vw;
-        padding-top: 2vw;
-        padding-left: 3vw;
-        padding-right: 3vw;
-    }
-
-    .bottom-row-item img {
-        width: 25vw;
-        height: 25vw;
-    }
-
-    #color-button {
-        box-shadow: 4px 4px black;
-        width: 5vw;
-        height: 5vw;
-    }
-
-    #color-button img {
-        width: 4vw;
-        height: 4vw;
-    }
+  .small-icon {
+    width: 80px;
+  }
 }
-

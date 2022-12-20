@@ -1,61 +1,90 @@
 <!DOCTYPE html>
 <html id="html">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
-        <title>Wes Beard</title>
-    </head>
-    <body>
-        <div id="main-text">
-            <p>Wes Beard</p>
-        </div>
-        <div id="top-row">
-            <div class="top-row-item" onclick="location.href = 'https:\/\/www.github.com/wesbeard'" onmouseover="hoverText('Github')" onmouseout="defaultText()">
-                <img src="./assets/github_shadow.png">
-            </div>
-        </div>
-        <div id="bottom-row">
-            <div class="bottom-row-item" onclick="location.href = 'https:\/\/www.instagram.com/wesb1665'" onmouseover="hoverText('Instagram')" onmouseout="defaultText()">
-                <img src="./assets/instagram_shadow.png">
-            </div>
-            <div class="bottom-row-item" onclick="location.href = 'https:\/\/www.linkedin.com/in/wesleybeard'" onmouseover="hoverText('LinkedIn')" onmouseout="defaultText()">
-                <img src="./assets/linkedin_shadow.png">
-            </div>
-            <div class="bottom-row-item" onclick="location.href = 'https:\/\/drive.google.com/file/d/1btk7LacQ0wnnwqGcjkgx21VQP3xLGzE5/view?usp=sharing'" onmouseover="hoverText('Resume')" onmouseout="defaultText()">
-                <img src="./assets/cv_shadow.png">
-            </div>
-            <div class="bottom-row-item" onclick="location.href = 'https:\/\/open.spotify.com/user/0t3pxf697kb53ll49zfcuv16w'" onmouseover="hoverText('Spotify')" onmouseout="defaultText()">
-                <img src="./assets/spotify_shadow.png">
-            </div>
-        </div>
-        <div id="color-button">
-            <img src="./assets/color-wheel.png" onclick="randBackground()">
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <title>Wes Beard</title>
+  </head>
+  <body>
+    <div id="title-row">
+      <p id="title">Wes Beard</p>
+    </div>
+    <div id="top-icons">
+      <img
+        src="assets/github.svg"
+        class="large-icon"
+        onclick="window.open('https:\/\/www.github.com/wesbeard','_blank');"
+        onmouseover="hoverText('GitHub')"
+        onmouseout="defaultText()"
+      />
+    </div>
+    <div id="bottom-icons">
+      <img
+        src="assets/linkedin.svg"
+        class="small-icon"
+        onclick="window.open('https:\/\/www.linkedin.com/in/wesleybeard','_blank');"
+        onmouseover="hoverText('LinkedIn')"
+        onmouseout="defaultText()"
+      />
+      <img
+        src="assets/spotify.svg"
+        class="small-icon"
+        onclick="window.open('https:\/\/open.spotify.com/user/0t3pxf697kb53ll49zfcuv16w','_blank');"
+        onmouseover="hoverText('Spotify')"
+        onmouseout="defaultText()"
+      />
+      <img
+        src="assets/instagram.svg"
+        class="small-icon"
+        onclick="window.open('https:\/\/www.instagram.com/wesbeard_','_blank');"
+        onmouseover="hoverText('Instagram')"
+        onmouseout="defaultText()"
+      />
+      <img
+        src="assets/resume.svg"
+        class="small-icon"
+        onclick="window.open('https:\/\/drive.google.com/file/d/1btk7LacQ0wnnwqGcjkgx21VQP3xLGzE5/view?usp=sharing','_blank');"
+        onmouseover="hoverText('Resume')"
+        onmouseout="defaultText()"
+      />
+    </div>
+    <div id="color-button">
+      <img src="./assets/color-wheel.png" onclick="randBackground()" />
+    </div>
+  </body>
 </html>
 
 <script>
-    let colors = ['#393840', '#d18400', '#5f20ab', '#ff9054', '#2fad53', '#25888a'];
-    let previousIndex = 1;
-    let randomIndex = 1;
+  let colors = [
+    "#393840",
+    "#d18400",
+    "#5f20ab",
+    "#ff9054",
+    "#2fad53",
+    "#25888a",
+  ];
+  let previousIndex = 1;
+  let randomIndex = 1;
 
-    function randBackground()
-    {
-        previousIndex = randomIndex;
-        while (randomIndex === previousIndex) {
-            randomIndex = Math.ceil(Math.random() * colors.length);
-        }
-        document.getElementById('html').style.background = colors[randomIndex - 1];
+  function randBackground() {
+    previousIndex = randomIndex;
+    while (randomIndex === previousIndex) {
+      randomIndex = Math.ceil(Math.random() * colors.length);
     }
+    document.getElementById("html").style.background = colors[randomIndex - 1];
+  }
 
-    function hoverText(title) {
-        document.getElementById('main-text').innerHTML = title;
-    }
+  function hoverText(title) {
+    document.getElementById("title").innerHTML = title;
+  }
 
-    function defaultText() {
-        document.getElementById('main-text').innerHTML = "Wes Beard";
-    }
+  function defaultText() {
+    document.getElementById("title").innerHTML = "Wes Beard";
+  }
 </script>
