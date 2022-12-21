@@ -54,8 +54,8 @@
         onmouseout="defaultText()"
       />
     </div>
-    <div id="color-button">
-      <img src="./assets/color-wheel.png" onclick="randBackground()"/>
+    <div id="color-button" onclick="randomizeBackground()">
+      <img src="./assets/color-wheel.png" />
     </div>
   </body>
 </html>
@@ -63,16 +63,16 @@
 <script>
   let colors = [
     "#393840",
-    "#d18400",
-    "#5f20ab",
-    "#ff9054",
-    "#2fad53",
-    "#25888a",
+    "#8f5601",
+    "#45167d",
+    "#801b16",
+    "#0b4d1e",
+    "#0d264a",
   ];
   let previousIndex = 1;
   let randomIndex = 1;
 
-  function randBackground() {
+  function randomizeBackground() {
     previousIndex = randomIndex;
     while (randomIndex === previousIndex) {
       randomIndex = Math.ceil(Math.random() * colors.length);
