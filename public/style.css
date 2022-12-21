@@ -21,6 +21,11 @@ body {
   flex: 2;
 }
 
+#title {
+  user-select: none;
+  cursor: default;
+}
+
 #top-icons {
   display: flex;
   align-items: center;
@@ -36,10 +41,14 @@ body {
   align-items: center;
   vertical-align: center;
   justify-content: space-around;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-select: none;
   margin: 20px;
   fill: #fff;
   filter: drop-shadow(10px 10px rgb(0 0 0));
@@ -98,7 +107,7 @@ p {
 
 #color-button img {
   filter: none;
-  width: 40px;
+  width: 35px;
   height: auto;
 }
 
@@ -117,5 +126,9 @@ p {
 
   .small-icon {
     width: 80px;
+  }
+
+  #title-row {
+    flex: 1;
   }
 }
