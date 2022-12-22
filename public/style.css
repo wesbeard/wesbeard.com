@@ -109,7 +109,7 @@ p {
 #color-button img {
   filter: none;
   width: 35px;
-  height: auto;
+  height: 35px;
 }
 
 @media (max-width: 600px) {
