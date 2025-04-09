@@ -14,46 +14,49 @@
   <body>
     <div id="title-row">
       <p id="title">Wes Beard</p>
+      <p id="sub-title">Software Engineer</p>
     </div>
-    <div id="top-icons">
+    <div id="icons-row" onmouseleave="defaultText()">
       <img
         src="assets/github.svg"
-        class="large-icon"
+        class="icon"
         onclick="window.open('https:\/\/www.github.com/wesbeard','_blank');"
-        onmouseover="hoverText('GitHub')"
-        onmouseout="defaultText()"
+        onmouseover="hoverText('GitHub', 'Check out my projects')"
       />
-    </div>
-    <div id="bottom-icons">
       <img
+
         src="assets/linkedin.svg"
-        class="small-icon"
+        class="icon"
         onclick="window.open('https:\/\/www.linkedin.com/in/wesleybeard','_blank');"
-        onmouseover="hoverText('LinkedIn')"
-        onmouseout="defaultText()"
-      />
-      <img
-        src="assets/spotify.svg"
-        class="small-icon"
-        onclick="window.open('https:\/\/open.spotify.com/user/0t3pxf697kb53ll49zfcuv16w','_blank');"
-        onmouseover="hoverText('Spotify')"
-        onmouseout="defaultText()"
-      />
-      <img
-        src="assets/instagram.svg"
-        class="small-icon"
-        onclick="window.open('https:\/\/www.instagram.com/wesbeard_','_blank');"
-        onmouseover="hoverText('Instagram')"
-        onmouseout="defaultText()"
+        onmouseover="hoverText('LinkedIn', 'Connect with me')"
       />
       <img
         src="assets/resume.svg"
-        class="small-icon"
-        onclick="window.open('https:\/\/drive.google.com/file/d/1btk7LacQ0wnnwqGcjkgx21VQP3xLGzE5/view?usp=sharing','_blank');"
-        onmouseover="hoverText('Resume')"
-        onmouseout="defaultText()"
+        class="icon"
+        onclick="window.open('https:\/\/docs.google.com/document/d/1Qrt8Jk7XWctWnx70_OqKOTUh2oiVhGEru448pDGNMGU/edit?usp=sharing');"
+        onmouseover="hoverText('Resume', 'View my resume')"
+      />
+      <img
+        src="assets/spotify.svg"
+        class="icon"
+        onclick="window.open('https:\/\/open.spotify.com/user/0t3pxf697kb53ll49zfcuv16w','_blank');"
+        onmouseover="hoverText('Spotify', 'Listen to my playlists')"
+      />
+      <img
+        src="assets/instagram.svg"
+        class="icon"
+        onclick="window.open('https:\/\/www.instagram.com/wesbeard_','_blank');"
+        onmouseover="hoverText('Instagram', 'Follow me')"
       />
     </div>
+    <p class="announcement-text">
+      Check out my new app
+      <a class="link" href="https://byrdyapp.com">byrdy</a>! Available now on
+      <a class="link" href="https://apps.apple.com/us/app/byrdy/id6673881691">iOS</a> and
+      <a class="link" href="https://play.google.com/store/apps/details?id=com.byrdy&hl=en_US"
+        >Android</a
+      >
+    </p>
     <div id="color-button" onclick="randomizeBackground()">
       <img src="assets/color.svg" />
     </div>
@@ -61,7 +64,7 @@
 </html>
 
 <script>
-  let colors = [
+  const colors = [
     "#393840",
     "#8f5601",
     "#45167d",
@@ -80,11 +83,23 @@
     document.getElementById("html").style.background = colors[randomIndex - 1];
   }
 
-  function hoverText(title) {
-    document.getElementById("title").innerHTML = title;
+  function hoverText(title, subtitle) {
+    const titleElement = document.getElementById("title");
+    const subTitleElement = document.getElementById("sub-title");
+
+    titleElement.classList.add("hidden");
+    subTitleElement.classList.add("hidden");
+
+    setTimeout(() => {
+      titleElement.innerHTML = title;
+      subTitleElement.innerHTML = subtitle;
+
+      titleElement.classList.remove("hidden");
+      subTitleElement.classList.remove("hidden");
+    }, 300);
   }
 
   function defaultText() {
-    document.getElementById("title").innerHTML = "Wes Beard";
+    hoverText("Wes Beard", "Software Engineer");
   }
 </script>
