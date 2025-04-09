@@ -57,7 +57,7 @@ img {
   -webkit-user-select: none;
   -webkit-user-drag: none;
   user-select: none;
-  margin: 20px;
+  margin: 1vw;
   fill: #fff;
   filter: drop-shadow(10px 10px rgb(0 0 0));
   transition: 0.3s ease-in-out;
@@ -124,6 +124,9 @@ p {
 
 @media (max-width: 600px) {
   .icon {
-    width: 20vw;
+    width: 15vw;
+  }
+  .announcement-text {
+    font-size: 5vw;
   }
 }
