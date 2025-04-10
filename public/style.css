@@ -1,5 +1,5 @@
 html {
-  background: #393840;
+  background: #0d264a;
   font-family: "Roboto", sans-serif;
   height: 100%;
   margin: 0;
@@ -58,13 +58,13 @@ img {
   -webkit-user-drag: none;
   user-select: none;
   margin: 20px;
-  fill: #fff;
-  filter: drop-shadow(10px 10px rgb(0 0 0));
+  fill: white;
+  filter: drop-shadow(10px 10px black);
   transition: 0.3s ease-in-out;
 }
 
 img:hover {
-  filter: drop-shadow(20px 20px rgb(0 0 0));
+  filter: drop-shadow(20px 20px black);
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -76,7 +76,7 @@ img:hover {
 
 p {
   margin: 0;
-  color: #fff;
+  color: white;
   text-align: center;
   text-shadow: 10px 10px black;
   transition: 0.3s ease-in-out;
@@ -88,7 +88,7 @@ p {
 }
 
 .link {
-  color: #fff;
+  color: white;
 }
 
 #color-button {
